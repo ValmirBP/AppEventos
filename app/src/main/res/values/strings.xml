@@ -1,0 +1,49 @@
+<resources>
+
+    <string name="app_name">EventShow</string>
+    <string name="title_eventos">Eventos</string>
+    <string name="title_mapa">Mapa</string>
+    <string name="title_historico">Histórico</string>
+    <string name="title_sair">Sair</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="info">Digite as informações solicitadas abaixo para realizar o cadastro</string>
+    <string name="nome">Nome</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="btnCad">Cadastrar</string>
+    <string name="detCompra">Detalhe da Compra</string>
+    <string name="data">DD/MM/AAAA</string>
+    <string name="qntdIngCompra">Qntda de Ingressos</string>
+    <string name="infoCompra">Toque no botão para gerar seu código de acesso ao evento</string>
+    <string name="btnCod">Código</string>
+    <string name="infoCod">Seu Código é</string>
+    <string name="codigo">XXX-XXX</string>
+    <string name="detEvento">Detalhe do evento</string>
+    <string name="evento">Evento1</string>
+    <string name="infoEvento">O Centro de Memória – Unicamp tem o prazer de convidar a comunidade acadêmica, profissionais ligados a escolas, museus, arquivos, associações e instituições diversas, e demais interessados para o IX Seminário Nacional do CMU e para o I Colóquio Gestão do Patrimônio Cultural, que acontecerá no período de 29 a 31 de julho e 1º de agosto de 2019, na Universidade Estadual de Campinas (UNICAMP), nas dependências da Faculdade de Educação. O IX Seminário Nacional tem por tema central “Memória e histórias locais: esquecimento, diversidades culturais e identidades”; o I Colóquio escolheu para o sua primeira edição o tema: “Projetos culturais e acervos”
+
+Nesse espaço você encontrará todas as informações relacionadas às diversas atividades programadas para estes eventos (conferência, mesas redondas, Grupos de Trabalho, exposição de pôsteres, Oficinas e as orientações e períodos para inscrições e submissão de resumos e trabalhos completos). Esperamos contar com sua participação nas discussões que serão realizadas durante o evento, contribuindo tanto para o aprofundamento das reflexões quanto para a criação de novas possibilidades de produção de conhecimento.
+
+Sejam bem-vindo(a)s ao IX Seminário Nacional do CMU e ao I Colóquio Gestão do Patrimônio Cultural!
+"</string>
+    <string name="compIng">Comprar ingresso</string>
+    <string name="btnMais">+</string>
+    <string name="btnMenos">-</string>
+    <string name="zero">0</string>
+    <string name="todosEventos">Todos os eventos</string>
+    <string name="histCompra">Hitórico de compras</string>
+    <string name="infoLogin">Faça o login ou cadastre-se para ter acesso às suas informações pessoais."</string>
+    <string name="btnFace">Entrar com Facebook</string>
+    <string name="btnGoogle">Entrar com Google</string>
+    <string name="ou">OU</string>
+    <string name="btnLogin">Entrar</string>
+    <string name="codBarra">XXXXX.XXXXXX XXXXX.XXXXXX XXXXX.XXXXXX X XXXXXXXXXXXXXX"</string>
+    <string name="infoBoleto">Utilize o número do código de barras abaixo para realizar o pagamento:"</string>
+    <string name="boleto">BOLETO</string>
+    <string name="vencimento">Vencimento</string>
+    <string name="valor">R$</string>
+    <string name="copiar">Copiar boleto</string>
+    <string name="infoPagBol">O boleto tem prazo de compesação de 3 dias úteis.</string>
+    <string name="gerarBoleto">Gerar boleto</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

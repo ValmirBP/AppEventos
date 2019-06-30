@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/txtLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/infoLogin"
+        android:textAlignment="center"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnFacebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtOu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_facebook"
+        android:backgroundTint="@color/FaceBook"
+        android:text="@string/btnFace"
+        android:textColor="@color/letraFundo" />
+
+
+          <TextView
+        android:id="@+id/txtOu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCadastrar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orderInCategory="100"
+        android:text="@string/ou"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnFacebook"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/btn_google"
+        android:backgroundTint="@color/Goolgle"
+        android:text="@string/btnGoogle"
+        android:textColor="@color/letraFundo"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editE-mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLogin"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:hint="@string/email"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/editSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editE-mail"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:hint="@string/senha"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/editSenha"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_resto"
+        android:padding="10dp"
+        android:text="@string/btnLogin"
+        android:textSize="12sp" />
+
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/editSenha"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_resto"
+        android:padding="10dp"
+        android:text="@string/btnCad"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>
