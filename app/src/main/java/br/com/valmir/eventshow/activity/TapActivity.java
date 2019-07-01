@@ -10,10 +10,10 @@ import android.support.annotation.NonNull;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import br.com.valmir.eventshow.EventosActivity;
-import br.com.valmir.eventshow.LoginActivity;
+import com.google.firebase.auth.FirebaseAuth;
+
+import br.com.valmir.eventshow.LoginActivity2;
 import br.com.valmir.eventshow.R;
-import br.com.valmir.eventshow.detEventoActivity;
 import br.com.valmir.eventshow.fragment.EventosFragment;
 import br.com.valmir.eventshow.fragment.HistCompraFragment;
 import br.com.valmir.eventshow.fragment.MapaFragment;
@@ -22,6 +22,8 @@ public class TapActivity extends AppCompatActivity implements BottomNavigationVi
     private TextView mTextMessage;
 
     private BottomNavigationView navigationView;
+    private FirebaseAuth fireAut;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,11 @@ public class TapActivity extends AppCompatActivity implements BottomNavigationVi
         navigationView = findViewById(R.id.nav_view);
         navigationView.setOnNavigationItemSelectedListener(this);
 
+        fireAut = FirebaseAuth.getInstance();
+
         displayEventsFragment();
+
+
     }
 
     @Override
@@ -56,10 +62,18 @@ public class TapActivity extends AppCompatActivity implements BottomNavigationVi
             case R.id.navigation_sair: {
                 Intent it = new Intent(TapActivity.this, LoginActivity.class);
                 startActivity(it);
+                logout();
                 break;
+
             }
         }
         return true;
+    }
+
+    private void logout() {
+        fireAut.signOut();
+        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        finish();
     }
 
     private void displayEventsFragment() {

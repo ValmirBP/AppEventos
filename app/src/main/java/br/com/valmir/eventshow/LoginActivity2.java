@@ -1,6 +1,5 @@
 package br.com.valmir.eventshow;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import br.com.valmir.eventshow.activity.CadastroActivity;
 import br.com.valmir.eventshow.activity.TapActivity;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity2 extends AppCompatActivity {
 
     Button btnLogin, btnCadastro, btnFacebook, btnGoogle;
 
@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         editSenha = findViewById(R.id.editSenha);
         btnLogin = findViewById(R.id.btnLogin);
         btnCadastro = findViewById(R.id.btnCadastrar);
-        btnFacebook = findViewById(R.id.btnFacebook);
+//        btnFacebook = findViewById(R.id.btnFacebook);
         btnGoogle = findViewById(R.id.btnGoogle);
 
         btnGoogle.setOnClickListener(new View.OnClickListener() {
@@ -59,12 +59,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void telaCadastro() {
-        Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
+        Intent intent = new Intent(LoginActivity2.this, CadastroActivity.class);
         startActivity(intent);
     }
 
     private void telaEventos() {
-        Intent intent = new Intent(LoginActivity.this, TapActivity.class);
+        Intent intent = new Intent(LoginActivity2.this, TapActivity.class);
         startActivity(intent);
     }
 }
