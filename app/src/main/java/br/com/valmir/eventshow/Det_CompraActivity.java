@@ -9,7 +9,7 @@ import android.widget.TextView;
 public class Det_CompraActivity extends AppCompatActivity {
 
     Button btnCodEntrada;
-    TextView txtDataCompra, txtNomeComprador, txtQntdIng, txtCod;
+    TextView txtCod;
 
 
     @Override
@@ -19,9 +19,6 @@ public class Det_CompraActivity extends AppCompatActivity {
         setContentView(R.layout.content_det_compra);
 
         btnCodEntrada = findViewById(R.id.btnCodEntrada);
-        txtDataCompra = findViewById(R.id.txtDataCompra);
-        txtNomeComprador = findViewById(R.id.txtNomeComprador);
-        txtQntdIng = findViewById(R.id.txtQntdIng);
         txtCod = findViewById(R.id.txtCod);
 
         btnCodEntrada.setOnClickListener(new View.OnClickListener() {

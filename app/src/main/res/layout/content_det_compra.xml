@@ -1,62 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/txtDetCompra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:text="@string/detCompra"
         android:textSize="15sp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imgEventoCompra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txtDetCompra"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+
+        <ImageView
+            android:id="@+id/imgEvento"
+            android:layout_width="match_parent"
+            android:layout_height="241dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:src="@mipmap/evento_4_round"
+            app:srcCompat="@mipmap/evento_1" />
+
 
     <TextView
-        android:id="@+id/txtDataCompra"
+        android:id="@+id/txtNomeEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imgEventoCompra"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:hint="@string/data"
+        android:text="@string/evento"
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/txtNomeComprador"
+        android:id="@+id/txtDataEvento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtDataCompra"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:hint="@string/nome"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/data"
         android:textSize="14sp" />
 
+
     <TextView
-        android:id="@+id/txtQntdIng"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtInfoEvento"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtNomeComprador"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:hint="@string/qntdIngCompra"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/infoEvento"
+        android:textAlignment="center"
         android:textSize="14sp" />
+
 
     <TextView
         android:id="@+id/txtInfoCod"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtQntdIng"
-        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
@@ -68,8 +79,6 @@
         android:id="@+id/btnCodEntrada"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtInfoCod"
-        android:layout_centerHorizontal="true"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
@@ -81,8 +90,7 @@
         android:id="@+id/txtSeuCod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnCodEntrada"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
@@ -94,11 +102,11 @@
         android:id="@+id/txtCod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtSeuCod"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:hint="@string/codigo"
-        android:textSize="20sp" />
+        android:layout_marginBottom="20dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+    </LinearLayout>
 
-
-</RelativeLayout>
+</ScrollView>
