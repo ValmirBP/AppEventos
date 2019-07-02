@@ -47,5 +47,7 @@ Sejam bem-vindo(a)s ao IX Seminário Nacional do CMU e ao I Colóquio Gestão do
     <string name="gerarBoleto">Gerar boleto</string>
     <string name="title_activity_maps">Map</string>
     <string name="action_sign_in_facebook">Sign in com Facebook</string>
-    <string name="facebook_app_id">2357728814334395</string>
+    <string name="facebook_app_id">2357728814334395</string> <string name="fb_login_protocol_scheme">fb2357728814334395</string>
+
+
 </resources>

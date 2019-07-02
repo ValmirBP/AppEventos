@@ -15,28 +15,6 @@
         android:textAlignment="center"
         android:textSize="14sp" />
 
-    <!--<Button-->
-        <!--android:id="@+id/btnFacebook"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@id/txtOu"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginLeft="15dp"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:layout_marginRight="15dp"-->
-        <!--android:background="@drawable/btn_facebook"-->
-        <!--android:backgroundTint="@color/FaceBook"-->
-        <!--android:text="@string/btnFace"-->
-        <!--android:textColor="@color/letraFundo" />-->
-
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="30dp" />
-
     <TextView
         android:id="@+id/txtOu"
         android:layout_width="match_parent"
@@ -50,20 +28,24 @@
         android:textSize="12sp"
         android:textStyle="bold" />
 
-    <Button
+    <com.google.android.gms.common.SignInButton
         android:id="@+id/btnGoogle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:layout_below="@id/login_button"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/btn_google"
-        android:backgroundTint="@color/Goolgle"
-        android:text="@string/btnGoogle"
-        android:textColor="@color/letraFundo"
-        android:textStyle="bold"/>
-        <!--android:layout_below="@id/btnFacebook"/>-->
+        android:layout_marginRight="15dp" />
+
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="396dp"
+        android:layout_height="395dp"
+        android:layout_below="@id/txtOu"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp" />
 
 
     <EditText
@@ -112,16 +94,5 @@
         android:padding="10dp"
         android:text="@string/btnCad"
         android:textSize="12sp" />
-
-    <Button
-        android:id="@+id/buttonFacebookLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginBottom="218dp"
-        android:text="Button" />
-
 
 </RelativeLayout>

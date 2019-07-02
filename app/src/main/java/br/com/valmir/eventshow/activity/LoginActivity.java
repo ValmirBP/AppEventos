@@ -1,10 +1,15 @@
 package br.com.valmir.eventshow.activity;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +27,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,31 +39,35 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import br.com.valmir.eventshow.R;
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
 
-    Button btnLogin, btnCadastro, btnFacebook, btnGoogle;
+    Button btnLogin, btnCadastro, login_button;
+    SignInButton btnGoogle;
 
     EditText editEmail, editSenha;
     private FirebaseAuth fireAut;
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
     private static final int RC_SIGN_IN_FACEBOOK = 64206;
-private static final String TAG = "Login Activity";
+    private static final String TAG = "Login Activity";
     private CallbackManager mCallbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_login);
-
+        printHashKey(this);
         editEmail = findViewById(R.id.editE_mail);
         editSenha = findViewById(R.id.editSenha);
         btnLogin = findViewById(R.id.btnLogin);
         btnCadastro = findViewById(R.id.btnCadastrar);
-       // btnFacebook = findViewById(R.id.btnFacebook);
+        login_button = findViewById(R.id.login_button);
         btnGoogle = findViewById(R.id.btnGoogle);
 
         fireAut = FirebaseAuth.getInstance();
@@ -70,12 +80,6 @@ private static final String TAG = "Login Activity";
             }
         });
 
-//        btnFacebook.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                telaEventos();
-//            }
-//        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,25 +122,33 @@ private static final String TAG = "Login Activity";
             @Override
             public void onCancel() {
                 Log.d(TAG, "facebook:onCancel");
-                // [START_EXCLUDE]
-               // updateUI(null);
-                // [END_EXCLUDE]
+
             }
 
             @Override
             public void onError(FacebookException error) {
-               Log.d(TAG, "facebook:onError", error);
-                // [START_EXCLUDE]
-                //updateUI(null);
-                // [END_EXCLUDE]
+                Log.d(TAG, "facebook:onError", error);
+
             }
         });
-        // [END initialize_fblogin]
 
-//      if (fireAut.getCurrentUser() != null) {
-  //         startActivity(new Intent(getApplicationContext(), TapActivity.class));
-      // }
 
+    }
+
+    public void printHashKey(Context pContext) {
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                String hashKey = new String(Base64.encode(md.digest(), 0));
+                Log.i(TAG, "printHashKey() Hash Key: " + hashKey);
+            }
+        } catch (NoSuchAlgorithmException e) {
+            Log.e(TAG, "printHashKey()", e);
+        } catch (Exception e) {
+            Log.e(TAG, "printHashKey()", e);
+        }
     }
 
     @Override
@@ -144,7 +156,7 @@ private static final String TAG = "Login Activity";
         super.onStart();
 
         FirebaseUser currentUser = fireAut.getCurrentUser();
-        //telaEventos();
+
     }
 
     private void entrarGoogle() {
@@ -188,30 +200,20 @@ private static final String TAG = "Login Activity";
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 authWithGoogle(account);
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                //Log.w(TAG, "Google sign in failed", e);
-                // [START_EXCLUDE]
-                //updateUI(null);
-                // [END_EXCLUDE]
-            }
-        }if (requestCode == RC_SIGN_IN_FACEBOOK) {
+                           }
+        }
+        if (requestCode == RC_SIGN_IN_FACEBOOK) {
             super.onActivityResult(requestCode, resultCode, data);
-
-            // Pass the activity result back to the Facebook SDK
             mCallbackManager.onActivityResult(requestCode, resultCode, data);
         }
     }
 
 
     private void handleFacebookAccessToken(AccessToken token) {
-        //Log.d(TAG, "handleFacebookAccessToken:" + token);
-        // [START_EXCLUDE silent]
-       // showProgressDialog();
-        // [END_EXCLUDE]
+
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         fireAut.signInWithCredential(credential)
@@ -225,12 +227,10 @@ private static final String TAG = "Login Activity";
                             Toast.makeText(getApplicationContext(), "Falha de  autenticação.", Toast.LENGTH_SHORT).show();
                         }
 
-                        // [START_EXCLUDE]
-                       // hideProgressDialog();
-                        // [END_EXCLUDE]
-                    }
+                                       }
                 });
     }
+
     // [END auth_with_facebook]
     private void authWithGoogle(GoogleSignInAccount account) {
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
