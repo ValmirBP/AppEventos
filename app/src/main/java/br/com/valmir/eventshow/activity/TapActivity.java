@@ -15,7 +15,7 @@ import br.com.valmir.eventshow.R;
 import br.com.valmir.eventshow.fragment.EventosFragment;
 import br.com.valmir.eventshow.fragment.HistCompraFragment;
 import br.com.valmir.eventshow.fragment.MapaFragment;
-import br.com.valmir.eventshow.fragment.TesteFragment;
+//import br.com.valmir.eventshow.fragment.TesteFragment;
 
 public class TapActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 

@@ -15,6 +15,6 @@
         android:text="@string/todosEventos"
         android:textSize="20sp" />
 
-    <include layout="@layout/content_eventos" />
+
 
 </android.support.constraint.ConstraintLayout>

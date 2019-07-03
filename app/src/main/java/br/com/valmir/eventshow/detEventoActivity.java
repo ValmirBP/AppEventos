@@ -17,7 +17,7 @@ import br.com.valmir.eventshow.model.Evento;
 public class detEventoActivity extends AppCompatActivity {
 
     Button btnGerBol;
-    private TextView txtDetEvento;
+    private TextView txtInfoEvento;
     private ImageView imgEvento;
     private TextView txtNomeEvento;
     private TextView txtDataEvento;
@@ -47,8 +47,8 @@ public class detEventoActivity extends AppCompatActivity {
 
         Evento evento = (Evento) getIntent().getSerializableExtra("evento");
 
-        txtDetEvento = findViewById(R.id.txtDetEvento);
-        txtDetEvento.setText(evento.getSobre());
+        txtInfoEvento = findViewById(R.id.txtInfoEvento);
+        txtInfoEvento.setText(evento.getSobre());
 
         imgEvento = findViewById(R.id.imgEvento);
         //  imgEvento.setImageResource(evento.getNomeImagem);

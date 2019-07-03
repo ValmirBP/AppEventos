@@ -6,16 +6,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="">
 
-        <TextView
-            android:id="@+id/txtDetEvento"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
 
-            android:textSize="20sp" />
 
 
         <ImageView
@@ -46,6 +40,7 @@
             android:textSize="14sp" />
 
 
+
         <TextView
             android:id="@+id/txtInfoEvento"
             android:layout_width="match_parent"
@@ -63,9 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-
             android:textSize="14sp" />
-
 
 
         <Button
