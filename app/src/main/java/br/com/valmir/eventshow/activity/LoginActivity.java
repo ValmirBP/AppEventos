@@ -188,14 +188,15 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         startActivity(intent);
     }
 
-// método que passa para a tela a tela de eventos
+// método que passa para a tela de eventos
 
     private void telaEventos() {
         Intent intent = new Intent(LoginActivity.this, TapActivity.class);
         startActivity(intent);
     }
 
-// método que confere no fire base senha e e-mail e realiza o login.
+// método que confere no firebase senha e e-mail e realiza o login.
+
 
     private void entrar() {
         String email = editEmail.getText().toString();

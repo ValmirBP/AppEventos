@@ -88,6 +88,7 @@ public class TapActivity extends AppCompatActivity implements BottomNavigationVi
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
-    }
+    public static MapaFragment newInstance() {
+        return new MapaFragment();
+    }}
 
