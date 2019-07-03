@@ -2,46 +2,46 @@ package br.com.valmir.eventshow.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import br.com.valmir.eventshow.LoginActivity2;
 import br.com.valmir.eventshow.R;
 import br.com.valmir.eventshow.fragment.EventosFragment;
 import br.com.valmir.eventshow.fragment.HistCompraFragment;
 import br.com.valmir.eventshow.fragment.MapaFragment;
+import br.com.valmir.eventshow.fragment.TesteFragment;
 
 public class TapActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-    private TextView mTextMessage;
 
-    private BottomNavigationView navigationView;
-    private FirebaseAuth fireAut;
+
+    private BottomNavigationView navigationView; // >>> Navegação
+    private FirebaseAuth fireAut; // >>> autenticação do fire base
 
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tap);
 
+// Identificando em classe R as variaveis
+
         navigationView = findViewById(R.id.nav_view);
         navigationView.setOnNavigationItemSelectedListener(this);
 
-        fireAut = FirebaseAuth.getInstance();
+        fireAut = FirebaseAuth.getInstance(); // >> método do Firebase
 
-        displayEventsFragment();
-
-
+        displayEventsFragment(); // >>> mostra o disply de fragmentos
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) { //>> no menu
         switch (item.getItemId()) {
             case R.id.navigation_eventos: {
                 displayEventsFragment();
@@ -72,13 +72,13 @@ public class TapActivity extends AppCompatActivity implements BottomNavigationVi
 
     private void logout() {
         fireAut.signOut();
-        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         finish();
     }
 
     private void displayEventsFragment() {
         getSupportActionBar().setTitle("Eventos");
-        Fragment eventosFragment = EventosFragment.newInstance();
+        Fragment eventosFragment = HistCompraFragment.newInstance();
         openFragment(eventosFragment);
     }
 
@@ -89,4 +89,5 @@ public class TapActivity extends AppCompatActivity implements BottomNavigationVi
         transaction.commit();
     }
 
-}
+    }
+

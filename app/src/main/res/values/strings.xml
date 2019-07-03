@@ -3,8 +3,8 @@
     <string name="app_name">EventShow</string>
     <string name="title_eventos">Eventos</string>
     <string name="title_mapa">Mapa</string>
-    <string name="title_historico">Histórico</string>
-    <string name="title_sair">Sair</string>
+    <string name="title_historico">Compras</string>
+    <string name="title_sair">Logout</string>
     <string name="cadastro">Cadastro</string>
     <string name="info">Digite as informações solicitadas abaixo para realizar o cadastro</string>
     <string name="nome">Nome</string>

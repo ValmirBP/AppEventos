@@ -20,6 +20,8 @@ import br.com.valmir.eventshow.R;
 
 public class CadastroActivity extends AppCompatActivity {
 
+//Nomeando minahs variáveis
+
     EditText editEmailCad, editSenhaCad;
     Button btnCadastro;
     FirebaseAuth firebaseAut;
@@ -29,26 +31,32 @@ public class CadastroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_cadastro);
 
+// Identificando em classe R as variaveis
+
         editEmailCad = findViewById(R.id.editEmailCad);
         editSenhaCad = findViewById(R.id.editSenhaCad);
         btnCadastro = findViewById(R.id.btnCadastrarCad);
 
-        firebaseAut = FirebaseAuth.getInstance();
+        firebaseAut = FirebaseAuth.getInstance();  //>>> Método do Firebase
 
-        btnCadastro.setOnClickListener(new View.OnClickListener() {
+        btnCadastro.setOnClickListener(new View.OnClickListener() { //>>> ação de clique de botão onde verifica a senha e -mail estão no padrão do firebase
             @Override
             public void onClick(View v) {
-                String email = editEmailCad.getText().toString();
-                String senha = editSenhaCad.getText().toString();
 
-                if (!TextUtils.isEmpty(email)) {
+
+                String email = editEmailCad.getText().toString();  //>>> transformação das variaveis em strings
+                String senha = editSenhaCad.getText().toString();  //>>>  transformação das variaveis em strings
+
+                if (!TextUtils.isEmpty(email)) { // >>>Checa se senha e e-mail estão preenchidos prara gerer a msmg toast
                     if (TextUtils.isEmpty(senha)) {
                         Toast.makeText(getApplicationContext(), "Favor complete os campos solicitados.", Toast.LENGTH_SHORT).show();
                     }
 
-                    if (senha.length() < 6) {
+                    if (senha.length() < 6) { // >>> Checa o tamanho da senha de acordo coma as regras do Firebase
                         Toast.makeText(getApplicationContext(), "A senha deve ter no mínimo 6 caracteres", Toast.LENGTH_SHORT).show();
                     }
+
+// Atenticação do Firebase que cria o usuário
 
                     firebaseAut.createUserWithEmailAndPassword(email, senha)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -58,7 +66,7 @@ public class CadastroActivity extends AppCompatActivity {
                                         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                         finish();
                                     } else {
-                                        Toast.makeText(getApplicationContext(), "E-mail ou senha incorretos", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getApplicationContext(), "Erro de autenticação", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });

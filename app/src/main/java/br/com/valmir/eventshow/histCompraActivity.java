@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Hist_CompraActivity extends AppCompatActivity {
+public class histCompraActivity extends AppCompatActivity {
 
     Button btnCodEntrada;
     TextView txtCod;

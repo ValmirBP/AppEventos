@@ -39,10 +39,10 @@
         </activity>
         <activity android:name=".activity.TapActivity" />
         <activity android:name=".activity.CadastroActivity" />
-        <activity android:name=".Det_CompraActivity" />
+        <activity android:name=".detCompraActivity" />
         <activity android:name=".detEventoActivity" />
         <activity android:name=".EventosActivity" />
-        <activity android:name=".Hist_CompraActivity" />
+        <activity android:name=".histCompraActivity" />
         <activity android:name=".MapaActivity" />
         <activity android:name=".Num_BoletoActivity" />
 
