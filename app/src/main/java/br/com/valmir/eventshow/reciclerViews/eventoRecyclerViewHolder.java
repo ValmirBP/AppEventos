@@ -20,33 +20,19 @@ import br.com.valmir.eventshow.R;
 public class eventoRecyclerViewHolder extends RecyclerView.ViewHolder{
     private static final String TAG = eventoRecyclerViewHolder.class.getSimpleName();
     public ImageView markIcon;
-    public TextView categoryTitle;
+    public TextView nome;
     public ImageView deleteIcon;
-    private List<Evento> taskObject;
-    public eventoRecyclerViewHolder(final View itemView, final List<Evento> taskObject) {
+    private List<Evento> evento;
+    public eventoRecyclerViewHolder(final View itemView, final List<Evento> evento) {
         super(itemView);
-        this.taskObject = taskObject;
-        categoryTitle = (TextView)itemView.findViewById(R.id.listEvento);
-        deleteIcon.setOnClickListener(new View.OnClickListener() {
+        this.evento = evento;
+        nome = (TextView)itemView.findViewById(R.id.txtNomeEvento);
+        nome.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Delete icon has been clicked", Toast.LENGTH_LONG).show();
-                String taskTitle = taskObject.get(getAdapterPosition()).getNome();
-                Log.d(TAG, "Task Title " + taskTitle);
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-                Query applesQuery = ref.orderByChild("task").equalTo(taskTitle);
-                applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
-                            appleSnapshot.getRef().removeValue();
-                        }
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.e(TAG, "onCancelled", databaseError.toException());
-                    }
-                });
+
             }
         });
     }

@@ -27,7 +27,7 @@ import br.com.valmir.eventshow.model.Evento;
         }
         @Override
         public void onBindViewHolder(eventoRecyclerViewHolder holder, int position) {
-            holder.categoryTitle.setText(eventoComp.get(position).getNome());
+            holder.nome.setText(eventoComp.get(position).getNome());
 
         }
         @Override

@@ -26,7 +26,7 @@ public class eventoRecyclerViewAdapter extends RecyclerView.Adapter<eventoRecycl
     }
     @Override
     public void onBindViewHolder(eventoRecyclerViewHolder holder, int position) {
-        holder.categoryTitle.setText(evento.get(position).getNome());
+        holder.nome.setText(evento.get(position).getNome());
     }
     @Override
     public int getItemCount() {
