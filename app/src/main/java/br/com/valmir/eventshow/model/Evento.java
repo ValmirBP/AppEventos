@@ -1,6 +1,8 @@
 package br.com.valmir.eventshow.model;
 
-public class Evento {
+import java.io.Serializable;
+
+public class Evento implements Serializable {
 
     String codigo;
     String boleto;
