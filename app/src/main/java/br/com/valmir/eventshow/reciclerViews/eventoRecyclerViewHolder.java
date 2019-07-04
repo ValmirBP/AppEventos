@@ -35,7 +35,8 @@ public class eventoRecyclerViewHolder extends RecyclerView.ViewHolder implements
 
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Delete icon has been clicked", Toast.LENGTH_LONG).show();
+
+
 
             }
         });
@@ -47,6 +48,8 @@ public class eventoRecyclerViewHolder extends RecyclerView.ViewHolder implements
 
                 Intent intent=new Intent(itemView.getContext() , detEventoActivity.class);
                 intent.putExtra("evento", eventos.get(getAdapterPosition()));
+                intent.putExtra("codItem", getAdapterPosition());
+
                 itemView.getContext().startActivity(intent);
 
             }

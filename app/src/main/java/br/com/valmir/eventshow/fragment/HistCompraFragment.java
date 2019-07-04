@@ -88,15 +88,17 @@ public class HistCompraFragment extends Fragment {
     private void EventosComp(DataSnapshot dataSnapshot) {
 
 
-        for (DataSnapshot ds : dataSnapshot.getChildren()){
-            Evento e=new Evento();
+        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+            Evento e = new Evento();
             e.setBoleto(ds.getValue(Evento.class).getBoleto());
             e.setCodigo(ds.getValue(Evento.class).getCodigo());
             e.setData(ds.getValue(Evento.class).getData());
             e.setEndereco(ds.getValue(Evento.class).getEndereco());
             e.setNome(ds.getValue(Evento.class).getNome());
             e.setSobre(ds.getValue(Evento.class).getSobre());
-            listaEventosComp.add(e);
+            //if (!e.getBoleto().isEmpty()) {
+                listaEventosComp.add(e);
+            //}
         }
 
         recyclerViewAdapter = new histCompRecyclerViewAdapter(getActivity(), listaEventosComp);

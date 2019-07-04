@@ -35,13 +35,14 @@
         android:layout_below="@id/login_button"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
-        android:layout_marginRight="15dp" />
+        android:layout_marginRight="15dp"
+        android:textAlignment="center"/>
 
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/com_facebook_profilepictureview_preset_size_large"
+        android:layout_width="396dp"
+        android:layout_height="89dp"
         android:layout_below="@id/txtOu"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"

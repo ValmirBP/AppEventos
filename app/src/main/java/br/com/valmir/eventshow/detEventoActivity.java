@@ -1,16 +1,14 @@
 package br.com.valmir.eventshow;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.Random;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import br.com.valmir.eventshow.model.Evento;
 
@@ -24,7 +22,6 @@ public class detEventoActivity extends AppCompatActivity {
     private TextView txtComprarIngresso;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,11 +32,15 @@ public class detEventoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Random random = new Random();
-                int randomNum = random.nextInt((5000 - 1500) + 1) + 1500;
-
                 txtComprarIngresso = findViewById(R.id.txtComparIgresso);
                 txtComprarIngresso.setText("23792011029001953484220005184401779490000012496");
+                String codItem = getIntent().getStringExtra("codItem");
+
+                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("evento/" + codItem + "/boleto");
+
+                myRef.setValue("23792011029001953484220005184401779490000012496");
 
             }
 
