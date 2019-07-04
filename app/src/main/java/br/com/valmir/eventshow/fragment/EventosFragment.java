@@ -21,36 +21,33 @@ import br.com.valmir.eventshow.model.Evento;
 import br.com.valmir.eventshow.R;
 import br.com.valmir.eventshow.reciclerViews.eventoRecyclerViewAdapter;
 
+// Inicio da classe
 
     public class EventosFragment extends Fragment {
 
-        private static final String TAG = EventosFragment.class.getSimpleName();
-        private RecyclerView recyclerView;
-        private LinearLayoutManager linearLayoutManager;
-        private eventoRecyclerViewAdapter recyclerViewAdapter;
-        private DatabaseReference databaseReference;
-        private List<Evento> listaEventos;
-       // private ListAdapter mListadapter;
+        private static final String TAG = EventosFragment.class.getSimpleName(); // todo entender este codigo
+        private RecyclerView recyclerView;                                      // >>> Declaração do recycle view
+        private LinearLayoutManager linearLayoutManager;                        // >>> Declaração do do gerenciado do linear layout
+        private eventoRecyclerViewAdapter recyclerViewAdapter;                  // >>> Declaração do adaptador o recycler View
+        private DatabaseReference databaseReference;                            // >>> Decração da refencia do BQD do Firebase ( RealTime)
+        private List<Evento> listaEventos;                                      // >>> Declaração da lista
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
 
-
             setHasOptionsMenu(true);
 
-            View RootView = inflater.inflate(R.layout.fragment_eventos, container, false);
+            View RootView = inflater.inflate(R.layout.fragment_eventos, container, false); // >>> fragmento eventos
 
-            listaEventos = new ArrayList<Evento>();
+            listaEventos = new ArrayList<Evento>(); //>>> criação da laista de eventos
             databaseReference = FirebaseDatabase.getInstance().getReference();
 
             recyclerView = (RecyclerView)  RootView.findViewById(R.id.listEvento);
             linearLayoutManager = new LinearLayoutManager(this.getActivity());
             recyclerView.setLayoutManager(linearLayoutManager);
 
-//        mListadapter = new RecyclerViewAdapter(listaEventos);
-//        recyclerView.setAdapter(mListadapter);
-
+// Recebimento do banco de dados em Json
 
             databaseReference.addChildEventListener(new ChildEventListener() {
                 @Override
@@ -84,8 +81,9 @@ import br.com.valmir.eventshow.reciclerViews.eventoRecyclerViewAdapter;
 
         }
 
-        private void Eventos(DataSnapshot dataSnapshot) {
+// Método que recebe os dados em JSON do Firebase
 
+        private void Eventos(DataSnapshot dataSnapshot) {
 
             for (DataSnapshot ds : dataSnapshot.getChildren()){
                 Evento e=new Evento();
@@ -97,6 +95,8 @@ import br.com.valmir.eventshow.reciclerViews.eventoRecyclerViewAdapter;
                 e.setSobre(ds.getValue(Evento.class).getSobre());
                 listaEventos.add(e);
             }
+
+ // adapta a tela com o tamanho
 
             recyclerViewAdapter = new eventoRecyclerViewAdapter(getActivity(), listaEventos);
             recyclerView.setAdapter(recyclerViewAdapter);

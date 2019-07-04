@@ -2,33 +2,17 @@ package br.com.valmir.eventshow;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
 import android.widget.TextView;
 
-import com.google.firebase.database.DatabaseReference;
-
-import br.com.valmir.eventshow.reciclerViews.eventoRecyclerViewAdapter;
+//Inicio da classe
 
 public class detCompraActivity extends AppCompatActivity {
 
     Button btnCodEntrada;
     TextView txtCod;
-
-
-    private RecyclerView recyclerView;
-    private LinearLayoutManager linearLayoutManager;
-    private eventoRecyclerViewAdapter recyclerViewAdapter;
-    private EditText addTaskBox;
-    /**
-     *
-     */
-    private DatabaseReference databaseReference;
-    //private List<Task> allTask;
-
 
     @Override
 
@@ -38,6 +22,8 @@ public class detCompraActivity extends AppCompatActivity {
 
         btnCodEntrada = findViewById(R.id.btnCodEntrada);
         txtCod = findViewById(R.id.txtCod);
+
+// Acão de clique que seta o código de entrada
 
         btnCodEntrada.setOnClickListener(new View.OnClickListener() {
             @Override

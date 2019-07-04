@@ -23,15 +23,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import br.com.valmir.eventshow.R;
 
+// Início da Classe
 
 public class MapaFragment extends Fragment {
 
     private Context context;
 
-    // public MapFragment() {
-    // Required empty public constructor
-    // }
-    @Override
+   @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -40,8 +38,10 @@ public class MapaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_mapa, container, false);
+
+        View rootView = inflater.inflate(R.layout.fragment_mapa, container, false); //>>> Grara tela de mapa
+
+// Habilita o mapa e envia a camera para as coordenada indicadas
 
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(new OnMapReadyCallback() {
@@ -49,16 +49,20 @@ public class MapaFragment extends Fragment {
             public void onMapReady(GoogleMap mMap) {
                 mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-                mMap.clear(); //clear old markers
+                mMap.clear(); // >>> limpa as marcações antigas
+
+// Ponto inicial da camera
 
                 CameraPosition googlePlex = CameraPosition.builder()
-                        .target(new LatLng(37.4219999, -122.0862462))
+                        .target(new LatLng(-22.95069737, -47.05503613))
                         .zoom(10)
                         .bearing(0)
                         .tilt(45)
                         .build();
 
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(googlePlex), 10000, null);
+
+// coordenadas dos eventos
 
                 mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(-22.9504903, -47.05474))
@@ -80,9 +84,10 @@ public class MapaFragment extends Fragment {
             }
         });
 
-
         return rootView;
     }
+
+    // TODO entender e comentar
 
     private BitmapDescriptor bitmapDescriptor(Context context,int vectorResId){
         Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);

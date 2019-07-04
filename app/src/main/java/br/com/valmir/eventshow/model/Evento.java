@@ -2,6 +2,9 @@ package br.com.valmir.eventshow.model;
 
 import java.io.Serializable;
 
+//Inicio da classe
+// classe que controi o padrão para o JSON
+
 public class Evento implements Serializable {
 
     String codigo;

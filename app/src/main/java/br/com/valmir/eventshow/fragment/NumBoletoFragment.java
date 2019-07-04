@@ -8,28 +8,18 @@ import android.view.ViewGroup;
 
 import br.com.valmir.eventshow.R;
 
+// Início da classe
+
 public class NumBoletoFragment extends Fragment {
+
+// Gera um fragmento novo com o layout indicado
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        /* Inflate the layout for this fragment */
+
         setHasOptionsMenu(true);
         return inflater.inflate(R.layout.fragment_num_boleto, container, false);
     }
-
-//    @Override
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//        inflater.inflate(R.menu.menu_chats, menu);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        if (item.getItemId() == R.id.action_chat) {
-//            Toast.makeText(getActivity(), "Clicked on " + item.getTitle(), Toast.LENGTH_SHORT)
-//                    .show();
-//        }
-//        return true;
-//    }
 }
 

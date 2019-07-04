@@ -1,6 +1,5 @@
 package br.com.valmir.eventshow.activity;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,7 +19,7 @@ import br.com.valmir.eventshow.R;
 
 public class CadastroActivity extends AppCompatActivity {
 
-//Nomeando minahs variáveis
+//Nomeando variáveis
 
     EditText editEmailCad, editSenhaCad;
     Button btnCadastro;
@@ -39,10 +38,11 @@ public class CadastroActivity extends AppCompatActivity {
 
         firebaseAut = FirebaseAuth.getInstance();  //>>> Método do Firebase
 
-        btnCadastro.setOnClickListener(new View.OnClickListener() { //>>> ação de clique de botão onde verifica a senha e -mail estão no padrão do firebase
+//Ação de clique de botão onde verifica a senha e -mail estão no padrão do firebase
+
+        btnCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 String email = editEmailCad.getText().toString();  //>>> transformação das variaveis em strings
                 String senha = editSenhaCad.getText().toString();  //>>>  transformação das variaveis em strings
@@ -79,5 +79,4 @@ public class CadastroActivity extends AppCompatActivity {
         });
 
     }
-
 }

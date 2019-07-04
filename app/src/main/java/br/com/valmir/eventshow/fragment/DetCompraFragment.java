@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import br.com.valmir.eventshow.R;
 
+// recebibento do layout compras
 
 public class DetCompraFragment extends Fragment {
 
