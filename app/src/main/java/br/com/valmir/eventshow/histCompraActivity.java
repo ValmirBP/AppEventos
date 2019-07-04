@@ -11,10 +11,10 @@ public class histCompraActivity extends AppCompatActivity {
     Button btnCodEntrada;
     TextView txtCod;
 
-
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_hist_compra);
 
@@ -22,12 +22,12 @@ public class histCompraActivity extends AppCompatActivity {
         txtCod = findViewById(R.id.txtCod);
 
         btnCodEntrada.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
                 txtCod.setText("123-456");
             }
-
         });
     }
-
 }

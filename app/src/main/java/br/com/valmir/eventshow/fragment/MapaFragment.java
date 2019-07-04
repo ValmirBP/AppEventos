@@ -71,7 +71,7 @@ public class MapaFragment extends Fragment {
 
                 mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(-22.95096412, -47.05161095))
-                        .title("Kotlin everywhare")
+                        .title("Liderança Avançada em Campinas\"")
                 );
 
                 mMap.addMarker(new MarkerOptions()
@@ -80,7 +80,7 @@ public class MapaFragment extends Fragment {
 
                 mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(-22.84717945, -47.08618194))
-                        .title("Liderança Avançada em Campinas"));
+                        .title("Kotlin everywhere"));
             }
         });
 
