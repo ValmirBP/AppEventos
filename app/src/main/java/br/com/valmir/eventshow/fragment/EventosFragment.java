@@ -38,6 +38,7 @@ import br.com.valmir.eventshow.reciclerViews.eventoRecyclerViewAdapter;
 
             setHasOptionsMenu(true);
 
+
             View RootView = inflater.inflate(R.layout.fragment_eventos, container, false); // >>> fragmento eventos
 
             listaEventos = new ArrayList<Evento>(); //>>> criação da laista de eventos
@@ -85,6 +86,8 @@ import br.com.valmir.eventshow.reciclerViews.eventoRecyclerViewAdapter;
 
         private void Eventos(DataSnapshot dataSnapshot) {
 
+            listaEventos = new ArrayList<Evento>();
+
             for (DataSnapshot ds : dataSnapshot.getChildren()){
                 Evento e=new Evento();
                 e.setBoleto(ds.getValue(Evento.class).getBoleto());
@@ -93,6 +96,7 @@ import br.com.valmir.eventshow.reciclerViews.eventoRecyclerViewAdapter;
                 e.setEndereco(ds.getValue(Evento.class).getEndereco());
                 e.setNome(ds.getValue(Evento.class).getNome());
                 e.setSobre(ds.getValue(Evento.class).getSobre());
+                e.setImg(ds.getValue(Evento.class).getImg());
                 listaEventos.add(e);
             }
 

@@ -27,15 +27,7 @@ public class eventoRecyclerViewHolder extends RecyclerView.ViewHolder implements
 
         super(itemView);
         this.eventos = eventos;
-
         nome = (TextView) itemView.findViewById(R.id.txtNomeEvento);
-        nome.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
 // Acão de clicar em algum item d lista que leva para a tela de eventos
 
@@ -45,7 +37,8 @@ public class eventoRecyclerViewHolder extends RecyclerView.ViewHolder implements
 
                 Intent intent = new Intent(itemView.getContext(), detEventoActivity.class);
                 intent.putExtra("evento", eventos.get(getAdapterPosition()));
-                intent.putExtra("codItem", getAdapterPosition());
+                int index = getAdapterPosition();
+                intent.putExtra("codItem", index);
                 itemView.getContext().startActivity(intent);
             }
         });

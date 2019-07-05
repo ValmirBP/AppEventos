@@ -87,6 +87,8 @@ public class HistCompraFragment extends Fragment {
 
     private void EventosComp(DataSnapshot dataSnapshot) {
 
+        listaEventosComp = new ArrayList<Evento>();
+
         for (DataSnapshot ds : dataSnapshot.getChildren()) {
             Evento e = new Evento();
             e.setBoleto(ds.getValue(Evento.class).getBoleto());
@@ -95,6 +97,7 @@ public class HistCompraFragment extends Fragment {
             e.setEndereco(ds.getValue(Evento.class).getEndereco());
             e.setNome(ds.getValue(Evento.class).getNome());
             e.setSobre(ds.getValue(Evento.class).getSobre());
+            e.setImg(ds.getValue(Evento.class).getImg());
 
 // Checa se existe um código de barras escrito em no Banco de dados, e se estiver acrecenta em compras
 

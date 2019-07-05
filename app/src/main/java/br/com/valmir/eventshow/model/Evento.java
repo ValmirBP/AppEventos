@@ -1,5 +1,7 @@
 package br.com.valmir.eventshow.model;
 
+import android.media.Image;
+
 import java.io.Serializable;
 
 //Inicio da classe
@@ -13,6 +15,7 @@ public class Evento implements Serializable {
     String endereco;
     String nome;
     String sobre;
+    int img;
 
     public Evento() {
         // Default constructor required for calls to DataSnapshot.getValue(Comment.class)
@@ -64,5 +67,13 @@ public class Evento implements Serializable {
 
     public void setSobre(String sobre) {
         this.sobre = sobre;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
     }
 }

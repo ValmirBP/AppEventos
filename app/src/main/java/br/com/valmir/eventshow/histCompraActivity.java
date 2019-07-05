@@ -18,16 +18,16 @@ public class histCompraActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_hist_compra);
 
-        btnCodEntrada = findViewById(R.id.btnCodEntrada);
-        txtCod = findViewById(R.id.txtCod);
+//        btnCodEntrada = findViewById(R.id.btnCodEntrada);
+//        txtCod = findViewById(R.id.txtCod);
 
-        btnCodEntrada.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                txtCod.setText("123-456");
-            }
-        });
+//        btnCodEntrada.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//
+//                txtCod.setText("123-456");
+//            }
+//        });
     }
 }

@@ -1,5 +1,6 @@
 package br.com.valmir.eventshow.reciclerViews;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 
 import br.com.valmir.eventshow.R;
+import br.com.valmir.eventshow.detCompraActivity;
+import br.com.valmir.eventshow.detEventoActivity;
 import br.com.valmir.eventshow.model.Evento;
 
 // Inicio da classe
@@ -27,47 +30,28 @@ public class histCompRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     private static final String TAG = br.com.valmir.eventshow.reciclerViews.histCompRecyclerViewHolder.class.getSimpleName();
 
-    public TextView categoryTitle;
-    public ImageView deleteIcon;
-    private List<Evento> taskObject;
+    public TextView nome;
 
-    public histCompRecyclerViewHolder(final View itemView, final List<Evento> taskObject) {
+
+    public histCompRecyclerViewHolder(final View itemView, final List<Evento> eventos) {
 
         super(itemView);
-        this.taskObject = taskObject;
 
-        categoryTitle = (TextView) itemView.findViewById(R.id.listEvento);
+        nome = (TextView) itemView.findViewById(R.id.txtNomeEvento);
 
-        deleteIcon.setOnClickListener(new View.OnClickListener() {
+// Acão de clicar em algum item d lista que leva para a tela de eventos
 
+        nome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(v.getContext(), "Delete icon has been clicked", Toast.LENGTH_LONG).show();
-                String taskTitle = taskObject.get(getAdapterPosition()).getNome();
-
-                Log.d(TAG, "Task Title " + taskTitle);
-
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-
-                Query applesQuery = ref.orderByChild("task").equalTo(taskTitle);
-
-                applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-
-                        for (DataSnapshot appleSnapshot : dataSnapshot.getChildren()) {
-                            appleSnapshot.getRef().removeValue();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        Log.e(TAG, "onCancelled", databaseError.toException());
-                    }
-                });
+                Intent intent = new Intent(itemView.getContext(), detCompraActivity.class);
+                intent.putExtra("evento", eventos.get(getAdapterPosition()));
+                int index = getAdapterPosition();
+                intent.putExtra("codItem", index);
+                itemView.getContext().startActivity(intent);
             }
         });
+
     }
 }

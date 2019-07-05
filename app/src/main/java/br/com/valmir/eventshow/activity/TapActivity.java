@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
 
 import br.com.valmir.eventshow.R;
+import br.com.valmir.eventshow.fragment.EventosFragment;
 import br.com.valmir.eventshow.fragment.HistCompraFragment;
 import br.com.valmir.eventshow.fragment.MapaFragment;
 
@@ -93,7 +94,7 @@ public class TapActivity extends AppCompatActivity implements BottomNavigationVi
 
     private void displayEventsFragment() {
         getSupportActionBar().setTitle("Eventos");
-        Fragment eventosFragment = HistCompraFragment.newInstance();
+        Fragment eventosFragment = EventosFragment.newInstance();
         openFragment(eventosFragment);
     }
 

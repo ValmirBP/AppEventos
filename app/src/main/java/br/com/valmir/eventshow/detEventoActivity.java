@@ -24,6 +24,8 @@ public class detEventoActivity extends AppCompatActivity {
     private TextView txtDataEvento;
     private TextView txtComprarIngresso;
 
+    private Integer images[] = {R.drawable.evento_1, R.drawable.evento_2, R.drawable.evento_3, R.drawable.evento_4};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,7 +44,7 @@ public class detEventoActivity extends AppCompatActivity {
 
                 txtComprarIngresso = findViewById(R.id.txtComparIgresso);
                 txtComprarIngresso.setText("23792.01102.90019.534842.20005.184401.779490 0 00012496456182");
-                String codItem = getIntent().getStringExtra("codItem");
+                int codItem = getIntent().getIntExtra("codItem", 0);
                 Toast.makeText(getApplicationContext(),
                         "Copiado para a área de transferência", Toast.LENGTH_SHORT).show();
 
@@ -65,7 +67,7 @@ public class detEventoActivity extends AppCompatActivity {
         txtInfoEvento.setText(evento.getSobre());
 
         imgEvento = findViewById(R.id.imgEvento);
-        //  imgEvento.setImageResource(evento.getNomeImagem);
+        imgEvento.setImageResource(images[evento.getImg()]);
 
         txtNomeEvento = findViewById(R.id.txtNomeEvento);
         txtNomeEvento.setText(evento.getNome());

@@ -13,7 +13,7 @@ import br.com.valmir.eventshow.model.Evento;
 
 // Iníco da classe
 
-    public class histCompRecyclerViewAdapter extends RecyclerView.Adapter<eventoRecyclerViewHolder> {
+    public class histCompRecyclerViewAdapter extends RecyclerView.Adapter<histCompRecyclerViewHolder> {
 
         private List<Evento> eventoComp; // >>> Declaração de lista
         protected Context context; // >>> todo entender para comentar
@@ -27,19 +27,19 @@ import br.com.valmir.eventshow.model.Evento;
 // >>> todo entender e comentar
 
         @Override
-        public eventoRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public histCompRecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-            eventoRecyclerViewHolder viewHolder = null;
+            histCompRecyclerViewHolder viewHolder = null;
 
             View layoutView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.content_eventos, parent, false);
 
-            viewHolder = new eventoRecyclerViewHolder(layoutView, eventoComp);
+            viewHolder = new histCompRecyclerViewHolder(layoutView, eventoComp);
             return viewHolder;
         }
 
         @Override
-        public void onBindViewHolder(eventoRecyclerViewHolder holder, int position) {
+        public void onBindViewHolder(histCompRecyclerViewHolder holder, int position) {
             holder.nome.setText(eventoComp.get(position).getNome());
 
         }
