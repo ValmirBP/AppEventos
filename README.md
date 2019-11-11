@@ -1,10 +1,10 @@
 # appEventos
 
-Aplicativo criado com integragação com o FrireBase,
-onde se é aquisitado o os eventos do firebase (mocado), utilizando realtime firebase.
+Aplicativo criado com integragação com o Frirebase,
+onde se é aquisitado o os eventos do firebase (mocado), utilizando Realtime Firebase.
 Login via Facebook, e-mail e Google.
 Possibilidade de compra de ingressos via boleto e a geração de um código para a para a entrada no local do evento (mocado)
-Utilização da permissão de localização do usuário para a demontração de um mapa com os eventos mais próximos e Visualização do mapa.
+Utilização da permissão de localização do usuário para a demonstração de um mapa com os eventos mais próximos e visualização do mapa.
 
 ![login eventshow](https://user-images.githubusercontent.com/48802923/68515577-4373cd00-0260-11ea-8fa2-791471c467e2.jpeg)
 
@@ -32,7 +32,7 @@ Disponíveis para as versões Ice Cream Sandwich (Android 4.0) em diante.
 
 # Exemplo de Uso:
 
-Este aplicativo foi criado para que possa ser usado para a compra de ingressos de eventos, com a resolução do problema de acesso ao local, com a geração de um código único para cada compra e armazenando os dados no Real time Firebase, além da possibilidade da visualização do local do evento no mapa, e eventos próximos.
+Este aplicativo foi criado para que possa ser usado para a compra de ingressos de eventos, com a resolução do problema de acesso ao local, com a geração de um código único para cada compra e armazenando os dados no Realtime Firebase, além da possibilidade da visualização do local do evento no mapa, e eventos próximos.
 
 # Autor:
 
