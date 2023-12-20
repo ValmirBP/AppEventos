@@ -1,39 +1,39 @@
-# appEventos
+# appEvents
 
-Aplicativo criado com integragação com o Frirebase,
-onde se é aquisitado o os eventos do firebase (mocado), utilizando Realtime Firebase.
-Login via Facebook, e-mail e Google.
-Possibilidade de compra de ingressos via boleto e a geração de um código para a para a entrada no local do evento (mocado)
-Utilização da permissão de localização do usuário para a demonstração de um mapa com os eventos mais próximos e visualização do mapa.
+Application created with integration with Frirebase,
+where firebase events (mocado) are acquired, using Realtime Firebase.
+Login via Facebook, email and Google.
+Possibility of purchasing tickets via bank slip and generating a code to enter the event venue (mocado)
+Using the user's location permission to demonstrate a map with the nearest events and view the map.
 
 ![login eventshow](https://user-images.githubusercontent.com/48802923/68515577-4373cd00-0260-11ea-8fa2-791471c467e2.jpeg)
 
-Imagem 1: Tela de login
+Image 1: Login screen
 
 ![eventList](https://user-images.githubusercontent.com/48802923/68515576-4373cd00-0260-11ea-848d-62632a0ea884.jpeg)
 
-Imagem 2: Tela de lista de eventos
+Image 2: Event list screen
 
 ![barCode](https://user-images.githubusercontent.com/48802923/68515572-42db3680-0260-11ea-86a9-942a7ccf6b88.jpeg)
 
-Imagem 3: Fim da tela com a geração do código de barras ( mocado)
+Image 3: End of the screen with barcode generation (mocado)
 
 ![CodeAccess](https://user-images.githubusercontent.com/48802923/68515580-4373cd00-0260-11ea-9a93-ecc8d1a2485b.jpeg)
 
-Imagem 4: Código de acesso para o evento ( mocado)
+Image 4: Access code for the event (mocado)
 
-![history](https://user-images.githubusercontent.com/48802923/68515578-4373cd00-0260-11ea-96b5-5a7a789b55eb.jpeg) 
+![history](https://user-images.githubusercontent.com/48802923/68515578-4373cd00-0260-11ea-96b5-5a7a789b55eb.jpeg)
 
-Imagem 5: Histórico de compras
+Image 5: Purchase history
 
-# Versão disponível:
+# Available version:
 
-Disponíveis para as versões Ice Cream Sandwich (Android 4.0) em diante.
+Available for Ice Cream Sandwich versions (Android 4.0) onwards.
 
-# Exemplo de Uso:
+# Example of use:
 
-Este aplicativo foi criado para que possa ser usado para a compra de ingressos de eventos, com a resolução do problema de acesso ao local, com a geração de um código único para cada compra e armazenando os dados no Realtime Firebase, além da possibilidade da visualização do local do evento no mapa, e eventos próximos.
+This application was created so that it can be used to purchase event tickets, solving the problem of accessing the venue, generating a unique code for each purchase and storing the data in Realtime Firebase, in addition to the possibility of viewing of the event location on the map, and nearby events.
 
-# Autor:
+# Author:
 
-Valmir de Barros Pedro - valmir.barros57@yahoo.com.br
+Valmir de Barros Pedro - valmirpsn@gmail.com
